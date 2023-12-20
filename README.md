@@ -11,17 +11,19 @@ Esta aplicación web, desarrollada con Laravel, Tailwind CSS y Livewire, proporc
 - **Laravel:** El framework PHP elegante y eficiente para el desarrollo web.
 - **Tailwind CSS:** Un marco de diseño de utilidades de bajo nivel que permite diseñar aplicaciones con rapidez.
 - **Livewire:** Biblioteca de Laravel que facilita la construcción de interfaces de usuario interactivas sin escribir código JavaScript.
+- **Docker y Laravel Sail:** Utiliza Docker para gestionar el entorno de desarrollo con Laravel Sail, lo que simplifica la configuración y ejecución del proyecto.
 
-## Instrucciones de Despliegue
-1. Clona este repositorio: `git clone https://github.com/tuusuario/tu-repositorio.git`
-2. Instala las dependencias: `composer install && npm install`
-3. Configura el archivo de entorno: `cp .env.example .env`
-4. Genera la clave de la aplicación: `php artisan key:generate`
-5. Configura la base de datos en el archivo `.env` y ejecuta las migraciones: `php artisan migrate`
-6. Inicia el servidor: `php artisan serve`
+## Instrucciones de Despliegue con Laravel Sail
+1. Clona este repositorio: `git clone https://github.com/Marcelino2017/jobblitz.git`
+2. Navega al directorio del proyecto: `cd tu-repositorio`
+3. Copia el archivo de entorno de ejemplo: `cp .env.example .env`
+4. Configura la base de datos en el archivo `.env`
+5. Inicia los contenedores Docker con Laravel Sail: `./vendor/bin/sail up -d`
+6. Ejecuta las migraciones: `./vendor/bin/sail artisan migrate`
+7. Visita la aplicación en tu navegador: `http://localhost`
 
-¡Explora las oportunidades laborales y haz tu próximo paso profesional con nuestra aplicación de Ofertas de Empleo!
 
 ## Capturas de Pantalla
-[![Captura de Pantalla 1](ruta-a-imagen-1.png)](ruta-a-imagen-1.png)
+<!-- [![Captura de Pantalla 1](ruta-a-imagen-1.png)](ruta-a-imagen-1.png)
 [![Captura de Pantalla 2](ruta-a-imagen-2.png)](ruta-a-imagen-2.png)
+ -->
