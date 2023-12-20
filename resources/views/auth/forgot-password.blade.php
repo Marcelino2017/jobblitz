@@ -16,10 +16,21 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
+        <div class="flex justify-between my-4">
+            <x-link
+                :href="route('register')"
+            >
+                Crear Cuenta
+            </x-link>
+
+            <x-link
+                :href="route('login')"
+            >
+                Inciar Sesión
+            </x-link>
         </div>
+        <x-primary-button  class="w-full justify-center">
+            {{ __('Email Password Reset Link') }}
+        </x-primary-button>
     </form>
 </x-guest-layout>
