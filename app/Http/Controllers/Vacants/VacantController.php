@@ -21,7 +21,7 @@ class VacantController extends Controller
      */
     public function create()
     {
-        //
+        return view('vacants.create');
     }
 
     /**

@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [VacantController::class, 'index'])
     ->middleware(['auth', 'verified'])->name('vacants.index');
+Route::get('/vacants/create', [VacantController::class, 'create'])
+    ->middleware(['auth', 'verified'])->name('vacants.create');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
