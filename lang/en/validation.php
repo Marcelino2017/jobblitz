@@ -231,5 +231,6 @@ return [
         'user'                     => 'user',
         'username'                 => 'username',
         'year'                     => 'year',
+        'title'                    => 'título',
     ],
 ];
