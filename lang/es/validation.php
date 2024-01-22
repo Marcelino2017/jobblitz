@@ -231,5 +231,8 @@ return [
         'user'                     => 'usuario',
         'username'                 => 'usuario',
         'year'                     => 'año',
+        'salary'                   => 'salario',
+        'category'                 => 'categoria',
+        'last_day'                => 'último día',
     ],
 ];
