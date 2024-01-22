@@ -233,6 +233,7 @@ return [
         'year'                     => 'año',
         'salary'                   => 'salario',
         'category'                 => 'categoria',
-        'last_day'                => 'último día',
+        'last_day'                 => 'último día',
+        'company'                  => 'empresa',
     ],
 ];
