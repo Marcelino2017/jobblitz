@@ -40,7 +40,10 @@
             dark:focus:border-indigo-600 focus:ring-indigo-500
             dark:focus:ring-indigo-600 rounded-md shadow-sm"
         >
-        <option value=""></option>
+            <option>-- Seleccionar ---</option>
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->category }}</option>
+            @endforeach
         </select>
         <x-input-error :messages="$errors->get('category')" class="mt-2" />
     </div>

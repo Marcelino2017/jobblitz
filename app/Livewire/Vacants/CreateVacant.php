@@ -12,9 +12,11 @@ class CreateVacant extends Component
     {
         //consultar DB
         $salaries = Salary::all();
+        $categories = Category::all();
 
         return view('livewire.vacants.create-vacant', [
-            'salaries' => $salaries,
+            'salaries'   => $salaries,
+            'categories' => $categories
         ]);
     }
 }
