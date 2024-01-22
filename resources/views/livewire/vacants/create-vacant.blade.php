@@ -117,6 +117,12 @@
             accept="image/*"
         />
 
+        <div class="my-5 w-80">
+            @if ($image)
+                Imagen: <img width="300" src="{{ $image->temporaryUrl() }}">
+            @endif
+        </div>
+
         @error('image')
             <livewire:alerts.show-error-alert :message="$message"/>
         @enderror
