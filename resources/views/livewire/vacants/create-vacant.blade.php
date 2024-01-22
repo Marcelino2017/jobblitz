@@ -10,7 +10,10 @@
             :value="old('title')"
             placeholder="Titulo Vancates"
         />
-        <x-input-error :messages="$errors->get('title')" class="mt-2" />
+
+        @error('title')
+            <livewire:alerts.show-error-alert :message="$message"/>
+        @enderror
     </div>
 
     <div>
@@ -28,7 +31,10 @@
                 <option value="{{ $salary->id }}">{{ $salary->salary }}</option>
             @endforeach
         </select>
-        <x-input-error :messages="$errors->get('salary')" class="mt-2" />
+
+        @error('salary')
+            <livewire:alerts.show-error-alert :message="$message"/>
+        @enderror
     </div>
 
     <div>
@@ -46,7 +52,10 @@
                 <option value="{{ $category->id }}">{{ $category->category }}</option>
             @endforeach
         </select>
-        <x-input-error :messages="$errors->get('category')" class="mt-2" />
+
+        @error('category')
+            <livewire:alerts.show-error-alert :message="$message"/>
+        @enderror
     </div>
 
     <div>
@@ -59,7 +68,10 @@
             :value="old('company')"
             placeholder="Empresa: ej. Neflixt, Uber, Shopify"
         />
-        <x-input-error :messages="$errors->get('company')" class="mt-2" />
+
+        @error('company')
+            <livewire:alerts.show-error-alert :message="$message"/>
+        @enderror
     </div>
 
     <div>
@@ -72,7 +84,10 @@
             :value="old('last_day')"
             placeholder="Empresa: ej. Neflixt, Uber, Shopify"
         />
-        <x-input-error :messages="$errors->get('last_day')" class="mt-2" />
+
+        @error('last_day')
+            <livewire:alerts.show-error-alert :message="$message"/>
+        @enderror
     </div>
 
     <div>
@@ -86,7 +101,10 @@
         >
 
         </textarea>
-        <x-input-error :messages="$errors->get('description')" class="mt-2" />
+
+        @error('description')
+            <livewire:alerts.show-error-alert :message="$message"/>
+        @enderror
     </div>
 
     <div>
@@ -97,7 +115,10 @@
             type="file"
             wire:model="image"
         />
-        <x-input-error :messages="$errors->get('image')" class="mt-2" />
+
+        @error('image')
+            <livewire:alerts.show-error-alert :message="$message"/>
+        @enderror
     </div>
 
     <x-primary-button>
