@@ -18,7 +18,7 @@ class CreateVacant extends Component
     public $image;
 
 
-    protected $rule = [
+    protected $rules = [
         'title'       => 'required|string',
         'salary'      => 'required',
         'category'    => 'required',
@@ -27,6 +27,11 @@ class CreateVacant extends Component
         'description' => 'required',
         'image'       => 'required',
     ];
+
+    public function createVacant()
+    {
+        $data = $this->validate();
+    }
 
     public function render()
     {
