@@ -50,9 +50,12 @@ class CreateVacant extends Component
             'image'       => $data['image'],
             'user_id'     => auth()->user()->id,
         ]);
+
         //Crear mensaje
+        session()->flash('message', 'La vacante se publicó correctamente.');
 
         //Redireccionar al usuario
+        return redirect()->route('vacants.index');
     }
 
     public function render()
