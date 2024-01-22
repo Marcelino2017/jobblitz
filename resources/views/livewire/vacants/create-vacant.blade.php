@@ -5,7 +5,8 @@
         <x-text-input
             id="title"
             class="block mt-1 w-full"
-            type="text" name="title"
+            type="text"
+            wire:model="title"
             :value="old('title')"
             placeholder="Titulo Vancates"
         />
@@ -15,7 +16,7 @@
     <div>
         <x-input-label for="salary" :value="__('Salario Mesual')" />
         <select
-            name="salary"
+            wire:model="salary"
             id="salary"
             class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900
             dark:text-gray-300 focus:border-indigo-500
@@ -33,7 +34,7 @@
     <div>
         <x-input-label for="category" :value="__('Categoria')" />
         <select
-            name="category"
+            wire:model="category"
             id="category"
             class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900
             dark:text-gray-300 focus:border-indigo-500
@@ -53,7 +54,8 @@
         <x-text-input
             id="company"
             class="block mt-1 w-full"
-            type="text" name="company"
+            type="text"
+            wire:model="company"
             :value="old('company')"
             placeholder="Empresa: ej. Neflixt, Uber, Shopify"
         />
@@ -65,7 +67,8 @@
         <x-text-input
             id="last_day"
             class="block mt-1 w-full"
-            type="date" name="last_day"
+            type="date"
+            wire:model="last_day"
             :value="old('last_day')"
             placeholder="Empresa: ej. Neflixt, Uber, Shopify"
         />
@@ -75,7 +78,7 @@
     <div>
         <x-input-label for="description" :value="__('Descripción del Puesto')" />
         <textarea
-            name="description"
+            wire:model="description"
             id="description"
             class="rounded-md shadow-sm border-gray-300
             focus:border-indigo-300 focus:ring focus:ring-indigo-200
@@ -91,7 +94,8 @@
         <x-text-input
             id="image"
             class="block mt-1 w-full"
-            type="file" name="image"
+            type="file"
+            wire:model="image"
         />
         <x-input-error :messages="$errors->get('image')" class="mt-2" />
     </div>
