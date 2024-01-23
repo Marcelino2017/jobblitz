@@ -1,5 +1,5 @@
 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-    @foreach ($vacants as $vacant)
+    @forelse ($vacants as $vacant)
         <div
             class="p-6 text-gray-900 dark:text-gray-100 md:flex
              md:justify-between md:items-center"
@@ -44,5 +44,8 @@
                 </a>
             </div>
         </div>
-    @endforeach
+    @empty
+        <p class="p-3 text-center text-gray-600 ">No hay vancates que mostrar</p>
+    @endforelse
+
 </div>
