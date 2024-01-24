@@ -26,11 +26,13 @@
                         text-sm font-bold uppercase text-center">
                         editar
                     </a>
-                    <a href="#"
+                    <button
+                        wire:click="$dispatch('mostrarAlerta', {{$vacant}})""
                         class="bg-red-800 py-2 px-4 rounded-lg text-white
-                        text-sm font-bold uppercase text-center">
+                        text-sm font-bold uppercase text-center"
+                    >
                         eliminar
-                    </a>
+                    </button>
                 </div>
             </div>
         @empty
@@ -44,24 +46,31 @@
 
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
-        Swal.fire({
-            title: "¿Eliminar Vacante?",
-            text: "Una vacante eliminada no se puede recuperar!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Si, ¡Elimnar!",
-            cancelButtonText: "Cancelar"
-        }).then((result) => {
-            if (result.isConfirmed) {
+        document.addEventListener('livewire:initialized', () => {
+            @this.on('mostrarAlerta', (vacant) => {
                 Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
+                    title: "¿Eliminar Vacante?",
+                    text: "Una vacante eliminada no se puede recuperar!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Si, ¡Elimnar!",
+                    cancelButtonText: "Cancelar"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // ELiminar vacante
+                        @this.call('deleteVacant',vacant);
+                        Swal.fire({
+                            title: "Se elimino la vacante.",
+                            text: "Eliminado correctamente.",
+                            icon: "success"
+                        });
+                    }
                 });
-            }
+            })
         });
     </script>
 @endpush
