@@ -15,7 +15,7 @@
                         Editar vacante: {{ $vacant->title }}
                     </h1>
                     <div class="md:flex md:justify-center p-5">
-
+                        <livewire:vacants.edit-vacant />
                     </div>
                 </div>
             </div>
