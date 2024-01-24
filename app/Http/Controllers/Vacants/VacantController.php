@@ -45,7 +45,9 @@ class VacantController extends Controller
      */
     public function edit(Vacant $vacant)
     {
-        //
+        return view('vacants.edit', [
+            'vacant' => $vacant
+        ]);
     }
 
     /**
