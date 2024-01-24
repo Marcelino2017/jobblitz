@@ -114,7 +114,7 @@
             id="image"
             class="block mt-1 w-full"
             type="file"
-            wire:model="image"
+            wire:model="new_image"
             accept="image/*"
         />
 
@@ -126,11 +126,11 @@
                 >
         </div>
 
-        {{-- <div class="my-5 w-80">
-            @if ($image)
-                Imagen: <img width="300" src="{{ $image->temporaryUrl() }}">
+        <div class="my-5 w-80">
+            @if ($new_image)
+                Imagen Nueva: <img width="300" src="{{ $new_image->temporaryUrl() }}">
             @endif
-        </div> --}}
+        </div>
 
         @error('image')
             <livewire:alerts.show-error-alert :message="$message"/>

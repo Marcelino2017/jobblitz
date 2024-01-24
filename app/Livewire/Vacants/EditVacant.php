@@ -7,6 +7,7 @@ use App\Models\Salary;
 use App\Models\Vacant;
 use Illuminate\Support\Carbon;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class EditVacant extends Component
 {
@@ -18,6 +19,9 @@ class EditVacant extends Component
     public $last_day;
     public $description;
     public $image;
+    public $new_image;
+
+    use WithFileUploads;
 
     protected $rules = [
         'title'       => 'required|string',
@@ -26,6 +30,7 @@ class EditVacant extends Component
         'company'     => 'required',
         'last_day'    => 'required',
         'description' => 'required',
+        'new_image'   => 'required|image|max:1024',
     ];
 
     public function mount(Vacant $vacant)
@@ -45,6 +50,10 @@ class EditVacant extends Component
         $data = $this->validate();
 
         //Si hay una nueva imagen
+        if ($this->new_image) {
+            $image = $this->new_image->store('public/vacants');
+            $data['image'] = str_replace('public/vacants/', '', $image);
+        }
 
         //Encontrar la vacante a editar
         $vacant = Vacant::find($this->vacant_id);
@@ -56,6 +65,7 @@ class EditVacant extends Component
         $vacant->company      = $data['company'];
         $vacant->last_day     = $vacant['last_day'];
         $vacant->description  = $data['description'];
+        $vacant->image        = $data['image'] ?? $vacant->image;
 
         //Guardar Vacante
         $vacant->save();
