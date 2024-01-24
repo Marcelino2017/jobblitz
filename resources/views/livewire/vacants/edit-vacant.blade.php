@@ -118,6 +118,14 @@
             accept="image/*"
         />
 
+        <div class="my-5 w-80">
+            <x-input-label :value="__('Imagen actual')"/>
+            <img
+                src="{{ asset('storage/vacants/'.$image) }}"
+                alt="{{ 'Imagen actual '.$title }}"
+                >
+        </div>
+
         {{-- <div class="my-5 w-80">
             @if ($image)
                 Imagen: <img width="300" src="{{ $image->temporaryUrl() }}">
