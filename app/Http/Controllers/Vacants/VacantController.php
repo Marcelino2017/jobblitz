@@ -24,13 +24,6 @@ class VacantController extends Controller
         return view('vacants.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -50,21 +43,5 @@ class VacantController extends Controller
         return view('vacants.edit', [
             'vacant' => $vacant
         ]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Vacant $vacant)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Vacant $vacant)
-    {
-        //
     }
 }
