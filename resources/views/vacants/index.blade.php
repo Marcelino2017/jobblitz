@@ -14,7 +14,7 @@
                     {{ session('message') }}
                 </div>
             @endif
-            <livewire:vacants.show-vacant/>
+            <livewire:vacants.show-vacants/>
         </div>
     </div>
 </x-app-layout>

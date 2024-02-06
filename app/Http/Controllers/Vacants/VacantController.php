@@ -30,7 +30,9 @@ class VacantController extends Controller
      */
     public function show(Vacant $vacant)
     {
-        //
+        return view('vacants.show', [
+            'vacant' => $vacant
+        ]);
     }
 
     /**
