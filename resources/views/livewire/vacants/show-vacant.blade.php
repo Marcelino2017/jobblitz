@@ -36,4 +36,19 @@
             </div>
         </div>
     </div>
+
+    @guest
+        <div class="mt-5 bg-gray-50 boder border-dashed p-5 text-center dark:bg-gray-700">
+            <p class="dark:text-white">
+                ¿Deseas aplicar esta vacante?
+                <a
+                    class="font-bold text-indigo-600"
+                    href="{{ route('register') }}"
+                >
+                    Obten una cuenta y aplica a esta y otras vacantes
+                </a>
+            </p>
+        </div>
+    @endguest
+
 </div>
