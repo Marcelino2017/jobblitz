@@ -17,13 +17,23 @@
 
             <p class="font-bold text-sm uppercase my-3 dark:text-gray-100">
                 Categoria:
-                <span class="normal-case font-normal dark:text-gray-100">{{ $vacant->category_id }}</span>
+                <span class="normal-case font-normal dark:text-gray-100">{{ $vacant->category->category }}</span>
             </p>
 
             <p class="font-bold text-sm uppercase my-3 dark:text-gray-100">
                 Salario:
-                <span class="normal-case font-normal dark:text-gray-100">{{ $vacant->salary_id }}</span>
+                <span class="normal-case font-normal dark:text-gray-100">{{ $vacant->salary->salary }}</span>
             </p>
+        </div>
+        <div class="md:grid md:grid-cols-6 gap-4">
+            <div class="md:col-span-2">
+                <img width="500" src="{{ asset('storage/vacants/' . $vacant->image ) }}" alt="{{ 'imagen vacate ' . $vacant->title }}">
+            </div>
+
+            <div class="md:col-span-4">
+                <h2 class="text-2xl font-bold mb-5 dark:text-zinc-100"> Drescripción del Puesto</h2>
+                <p class="dark:text-zinc-100">{{ $vacant->description }}</p>
+            </div>
         </div>
     </div>
 </div>
