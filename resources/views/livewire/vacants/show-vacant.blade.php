@@ -51,8 +51,10 @@
         </div>
     @endguest
 
-    @cannot('create', App\Models\Vacant::class)
-        <livewire:vacants.apply-vacant :vacant="$vacant">
-    @endcan
+    @auth
+        @cannot('create', App\Models\Vacant::class)
+            <livewire:vacants.apply-vacant :vacant="$vacant">
+        @endcan
+    @endauth
 
 </div>
