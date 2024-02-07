@@ -26,6 +26,15 @@
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 @auth
+                    @if (auth()->user()->rol == 2)
+                        <a href="{{ route('notifications') }}"
+                            class="mr-2 w-7 h-7 bg-indigo-800 rounded-full flex
+                            flex-col justify-center items-center text-sm
+                            font-extrabold text-white"
+                        >
+                            {{ Auth::user()->unreadNotifications->count() }}
+                        </a>
+                    @endif
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
@@ -95,6 +104,20 @@
                 </x-responsive-nav-link>
             </div>
 
+            @if (auth()->user()->rol == 2)
+                <div class="flex gap-2 items-center p-3">
+                    <a href="{{ route('notifications') }}"
+                        class="w-7 h-7 bg-indigo-800 rounded-full flex
+                        flex-col justify-center items-center text-sm
+                        font-extrabold text-white "
+                    >
+                        {{ Auth::user()->unreadNotifications->count() }}
+                    </a>
+                    <p class="xtext-base font-medium text-gray-600 dark:text-gray-400">
+                        @choice('Notificacione|Notificaciones',Auth::user()->unreadNotifications->count())
+                    </p>
+                </div>
+            @endif
             <!-- Responsive Settings Options -->
             <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
                 <div class="px-4">
