@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Candidates\CandidateController;
+use App\Http\Controllers\Homes\HomeController;
 use App\Http\Controllers\Notifications\NotificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Vacants\VacantController;
@@ -17,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/',HomeController::class)->name('home.index');
 
 Route::get('/dashboard', [VacantController::class, 'index'])
     ->middleware(['auth', 'verified', 'rol.recruiter'])->name('vacants.index');
