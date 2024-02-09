@@ -17,7 +17,7 @@ class RolUser
     {
         if ($request->user()->rol == 1) {
             //En caso de que no sea el rol 2, redireccionara al usuario hacia el home
-            return redirect()->route('home');
+            return redirect()->route('home.index');
         }
         return $next($request);
     }
