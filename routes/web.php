@@ -21,7 +21,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/dashboard', [VacantController::class, 'index'])
-    ->middleware(['auth', 'verified'])->name('vacants.index');
+    ->middleware(['auth', 'verified', 'rol.recruiter'])->name('vacants.index');
 Route::get('/vacants/create', [VacantController::class, 'create'])
     ->middleware(['auth', 'verified'])->name('vacants.create');
 Route::get('/vacants/{vacant}/edit', [VacantController::class, 'edit'])
